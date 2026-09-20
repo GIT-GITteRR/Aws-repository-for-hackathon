@@ -3,45 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mess Announcements - MessMate</title>
+  <title>Announcements Management - MessMate Admin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
   <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
   <div class="app-container">
-    <aside class="sidebar" id="sidebar">
+    <aside class="sidebar admin-sidebar" id="sidebar">
       <div class="sidebar-header">
-        <div class="logo-badge">🍲</div>
+        <div class="logo-badge" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">👨‍🍳</div>
         <div class="logo-text">
-          <span class="logo-title">Mess<span>Mate</span></span>
-          <span class="logo-subtitle">Student Portal</span>
+          <span class="logo-title">Mess<span>Mate</span> <span class="admin-badge-indicator">ADMIN</span></span>
+          <span class="logo-subtitle">Mess Control Panel</span>
         </div>
       </div>
 
       <nav class="sidebar-nav">
-        <span class="nav-section-title">Main Menu</span>
+        <span class="nav-section-title">Administration</span>
         <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
-        <a href="menu.html" class="nav-link"><span>🍛</span> Today's Menu</a>
-        <a href="weekly-menu.html" class="nav-link"><span>📅</span> Weekly Menu</a>
-        <a href="ratings.html" class="nav-link"><span>⭐</span> Meal Ratings</a>
+        <a href="menu.html" class="nav-link"><span>📋</span> Menu Management</a>
         <a href="complaints.html" class="nav-link"><span>📝</span> Complaints</a>
         <a href="announcements.html" class="nav-link active"><span>📢</span> Announcements</a>
-        <a href="information.html" class="nav-link"><span>ℹ️</span> Mess Information</a>
-        <a href="profile.html" class="nav-link"><span>👤</span> Profile</a>
+        <a href="../ratings.html" class="nav-link"><span>⭐</span> Meal Ratings</a>
+        <a href="../information.html" class="nav-link"><span>ℹ️</span> Mess Settings</a>
       </nav>
 
       <div class="sidebar-footer">
         <div class="user-mini-card">
-          <div class="user-avatar">AS</div>
+          <div class="user-avatar" style="background: #2563eb;">MR</div>
           <div class="user-details">
-            <div class="user-profile-name">Aarav Sharma</div>
-            <div class="user-profile-id">Aravali Hostel • B-304</div>
+            <div class="user-profile-name">Mess Admin</div>
+            <div class="user-profile-id">Supervisor Role</div>
           </div>
-          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+          <a href="../index.html" class="btn-sidebar-logout" title="Exit Admin">🚪</a>
         </div>
       </div>
     </aside>
@@ -52,46 +51,91 @@
           <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
           <div class="header-meta">
             <div class="header-mess-name">
-              Announcements <span class="header-mess-badge">Official Noticeboard</span>
+              Announcement Desk <span class="header-mess-badge" style="background: #eff6ff; color: #1e40af;">Publishing Feed</span>
             </div>
             <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
           </div>
         </div>
 
         <div class="header-right">
-          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">👨‍🍳 Admin</a>
-          <a href="announcements.html" class="header-icon-btn" title="Notifications">🔔</a>
-          <a href="profile.html" class="header-icon-btn" title="My Profile">👤</a>
+          <a href="../dashboard.html" class="header-btn-role-switch">🎓 Student View</a>
         </div>
       </header>
 
       <main class="content-body">
         <div class="page-header-block">
           <div>
-            <h1 class="page-title">Mess Announcements & Circulars</h1>
-            <p class="page-subtitle">Stay informed about festival menus, special dinners, cleaning schedules, and committee meetings.</p>
-          </div>
-
-          <!-- Category Filters -->
-          <div class="filter-button-group">
-            <button class="filter-btn announcement-filter-btn active" data-filter="All">All</button>
-            <button class="filter-btn announcement-filter-btn" data-filter="Important">🔥 Important</button>
-            <button class="filter-btn announcement-filter-btn" data-filter="Events">🎉 Events</button>
-            <button class="filter-btn announcement-filter-btn" data-filter="Maintenance">🛠️ Maintenance</button>
-            <button class="filter-btn announcement-filter-btn" data-filter="General">📌 General</button>
+            <h1 class="page-title">Broadcast Announcements & Circulars</h1>
+            <p class="page-subtitle">Publish notifications for maintenance, special festive dinners, or schedule adjustments.</p>
           </div>
         </div>
 
-        <!-- Announcements Feed -->
-        <div class="announcements-feed" id="announcements-board">
-          <!-- Rendered by announcements.js -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; align-items: flex-start;">
+          
+          <!-- Publish Announcement Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📢 Post New Circular</h3>
+            </div>
+            <div class="card-body">
+              <form id="admin-create-announcement-form">
+                <div class="form-group">
+                  <label class="form-label" for="ann-title-input">Circular Title *</label>
+                  <input type="text" class="form-input" id="ann-title-input" placeholder="e.g. Special Navratri Dinner" required />
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="form-group">
+                    <label class="form-label" for="ann-cat-select">Category</label>
+                    <select class="form-select" id="ann-cat-select">
+                      <option value="Events">Events & Festivals</option>
+                      <option value="Maintenance">Maintenance</option>
+                      <option value="General">General Notice</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="ann-priority-select">Priority Level</label>
+                    <select class="form-select" id="ann-priority-select">
+                      <option value="General">Regular</option>
+                      <option value="Important">Important (Urgent)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ann-desc-input">Description / Content *</label>
+                  <textarea class="form-textarea" id="ann-desc-input" placeholder="Enter detailed notice for students..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  🚀 Broadcast Announcement
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Active Announcements List -->
+          <div>
+            <div class="page-header-block" style="margin-bottom: 16px;">
+              <div>
+                <h3 style="font-size: 1.2rem; font-weight: 700;">Live Feed</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">Currently visible notices on student dashboard</p>
+              </div>
+            </div>
+
+            <div id="admin-announcements-list">
+              <!-- Rendered by admin.js -->
+            </div>
+          </div>
+
         </div>
       </main>
     </div>
   </div>
 
-  <script src="js/api.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/announcements.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/admin.js"></script>
 </body>
 </html>
