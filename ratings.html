@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Ratings & Feedback - MessMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🍲</div>
+        <div class="logo-text">
+          <span class="logo-title">Mess<span>Mate</span></span>
+          <span class="logo-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
+        <a href="menu.html" class="nav-link"><span>🍛</span> Today's Menu</a>
+        <a href="weekly-menu.html" class="nav-link"><span>📅</span> Weekly Menu</a>
+        <a href="ratings.html" class="nav-link active"><span>⭐</span> Meal Ratings</a>
+        <a href="complaints.html" class="nav-link"><span>📝</span> Complaints</a>
+        <a href="announcements.html" class="nav-link"><span>📢</span> Announcements</a>
+        <a href="information.html" class="nav-link"><span>ℹ️</span> Mess Information</a>
+        <a href="profile.html" class="nav-link"><span>👤</span> Profile</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar">AS</div>
+          <div class="user-details">
+            <div class="user-profile-name">Aarav Sharma</div>
+            <div class="user-profile-id">Aravali Hostel • B-304</div>
+          </div>
+          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
+          <div class="header-meta">
+            <div class="header-mess-name">
+              Meal Ratings <span class="header-mess-badge">Student Feedback</span>
+            </div>
+            <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">👨‍🍳 Admin</a>
+          <a href="announcements.html" class="header-icon-btn" title="Notifications">🔔</a>
+          <a href="profile.html" class="header-icon-btn" title="My Profile">👤</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="page-header-block">
+          <div>
+            <h1 class="page-title">Meal Ratings & Feedback</h1>
+            <p class="page-subtitle">Help improve food quality by rating taste, hygiene, quantity and overall experience.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="openRateModal('Today\'s Lunch', 'Lunch')">
+            ⭐ Rate Latest Meal
+          </button>
+        </div>
+
+        <!-- Recent Meals to Rate Feed -->
+        <div id="recent-meals-rating-list">
+          <!-- Rendered by ratings.js -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Interactive Rating Modal -->
+  <div class="modal-backdrop" id="rate-meal-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-rate-meal-title">Rate Meal</h3>
+        <button class="modal-close-btn" onclick="UI.closeModal('rate-meal-modal')">×</button>
+      </div>
+      <form id="submit-rating-form">
+        <div class="modal-body">
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px;">
+            How was your dining experience? Score the key factors below:
+          </p>
+
+          <!-- Taste Rating -->
+          <div class="rating-criteria-row">
+            <div>
+              <div class="rating-criteria-label">👅 Taste & Flavors</div>
+              <small style="color: var(--text-muted); font-size: 0.78rem;">Spiciness, seasoning & aroma</small>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="interactive-stars" id="stars-taste">
+                <button type="button" class="star-btn active" data-value="1">★</button>
+                <button type="button" class="star-btn active" data-value="2">★</button>
+                <button type="button" class="star-btn active" data-value="3">★</button>
+                <button type="button" class="star-btn active" data-value="4">★</button>
+                <button type="button" class="star-btn active" data-value="5">★</button>
+              </div>
+              <span id="score-taste" style="font-weight: 700; font-size: 0.9rem; min-width: 28px;">5/5</span>
+            </div>
+          </div>
+
+          <!-- Quality Rating -->
+          <div class="rating-criteria-row">
+            <div>
+              <div class="rating-criteria-label">🥗 Food Quality & Freshness</div>
+              <small style="color: var(--text-muted); font-size: 0.78rem;">Ingredient quality & temperature</small>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="interactive-stars" id="stars-quality">
+                <button type="button" class="star-btn active" data-value="1">★</button>
+                <button type="button" class="star-btn active" data-value="2">★</button>
+                <button type="button" class="star-btn active" data-value="3">★</button>
+                <button type="button" class="star-btn active" data-value="4">★</button>
+                <button type="button" class="star-btn active" data-value="5">★</button>
+              </div>
+              <span id="score-quality" style="font-weight: 700; font-size: 0.9rem; min-width: 28px;">5/5</span>
+            </div>
+          </div>
+
+          <!-- Quantity Rating -->
+          <div class="rating-criteria-row">
+            <div>
+              <div class="rating-criteria-label">🍛 Portion & Quantity</div>
+              <small style="color: var(--text-muted); font-size: 0.78rem;">Adequate refills & portions</small>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="interactive-stars" id="stars-quantity">
+                <button type="button" class="star-btn active" data-value="1">★</button>
+                <button type="button" class="star-btn active" data-value="2">★</button>
+                <button type="button" class="star-btn active" data-value="3">★</button>
+                <button type="button" class="star-btn active" data-value="4">★</button>
+                <button type="button" class="star-btn active" data-value="5">★</button>
+              </div>
+              <span id="score-quantity" style="font-weight: 700; font-size: 0.9rem; min-width: 28px;">5/5</span>
+            </div>
+          </div>
+
+          <!-- Hygiene Rating -->
+          <div class="rating-criteria-row" style="border-bottom: none;">
+            <div>
+              <div class="rating-criteria-label">✨ Cleanliness & Hygiene</div>
+              <small style="color: var(--text-muted); font-size: 0.78rem;">Cutlery sanitization & serving</small>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="interactive-stars" id="stars-hygiene">
+                <button type="button" class="star-btn active" data-value="1">★</button>
+                <button type="button" class="star-btn active" data-value="2">★</button>
+                <button type="button" class="star-btn active" data-value="3">★</button>
+                <button type="button" class="star-btn active" data-value="4">★</button>
+                <button type="button" class="star-btn active" data-value="5">★</button>
+              </div>
+              <span id="score-hygiene" style="font-weight: 700; font-size: 0.9rem; min-width: 28px;">5/5</span>
+            </div>
+          </div>
+
+          <!-- Written feedback -->
+          <div class="form-group" style="margin-top: 16px;">
+            <label class="form-label" for="rating-feedback-text">Optional Written Feedback</label>
+            <textarea class="form-textarea" id="rating-feedback-text" placeholder="Tell the chef or mess committee what you liked or how to improve..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="UI.closeModal('rate-meal-modal')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Rating</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/ratings.js"></script>
+</body>
+</html>

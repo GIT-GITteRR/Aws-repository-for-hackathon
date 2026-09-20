@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile - MessMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🍲</div>
+        <div class="logo-text">
+          <span class="logo-title">Mess<span>Mate</span></span>
+          <span class="logo-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
+        <a href="menu.html" class="nav-link"><span>🍛</span> Today's Menu</a>
+        <a href="weekly-menu.html" class="nav-link"><span>📅</span> Weekly Menu</a>
+        <a href="ratings.html" class="nav-link"><span>⭐</span> Meal Ratings</a>
+        <a href="complaints.html" class="nav-link"><span>📝</span> Complaints</a>
+        <a href="announcements.html" class="nav-link"><span>📢</span> Announcements</a>
+        <a href="information.html" class="nav-link"><span>ℹ️</span> Mess Information</a>
+        <a href="profile.html" class="nav-link active"><span>👤</span> Profile</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar">AS</div>
+          <div class="user-details">
+            <div class="user-profile-name">Aarav Sharma</div>
+            <div class="user-profile-id">Aravali Hostel • B-304</div>
+          </div>
+          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
+          <div class="header-meta">
+            <div class="header-mess-name">
+              Student Profile <span class="header-mess-badge">Account Details</span>
+            </div>
+            <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">👨‍🍳 Admin</a>
+          <a href="announcements.html" class="header-icon-btn" title="Notifications">🔔</a>
+          <a href="profile.html" class="header-icon-btn" title="My Profile">👤</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="page-header-block">
+          <div>
+            <h1 class="page-title">Student Profile</h1>
+            <p class="page-subtitle">Your registered hostel room, dietary preferences and contact information.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="openEditProfileModal()">
+            ✏️ Edit Profile
+          </button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 320px 1fr; gap: 28px; align-items: flex-start;">
+          
+          <!-- Profile Badge Card -->
+          <div class="card" style="text-align: center; padding: 32px 24px;">
+            <div style="width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #a855f7); color: #fff; font-size: 2.2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: var(--shadow-md);">
+              AS
+            </div>
+            <h2 class="profile-name-val" style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">Aarav Sharma</h2>
+            <div class="profile-id-val" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700; margin-top: 2px;">2023CSB1042</div>
+            
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-light); text-align: left;">
+              <div style="margin-bottom: 12px;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Hostel & Room</span>
+                <div style="font-size: 0.95rem; font-weight: 600;"><span id="profile-hostel-val">Aravali Hostel</span>, <span id="profile-room-val">B-304</span></div>
+              </div>
+              <div style="margin-bottom: 12px;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Dietary Preference</span>
+                <div style="font-size: 0.95rem; font-weight: 600; color: #059669;" id="profile-diet-val">Vegetarian</div>
+              </div>
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Assigned Mess</span>
+                <div style="font-size: 0.95rem; font-weight: 600;" id="profile-mess-val">North Campus Central Mess</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Information Details Grid -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📋 Academic & Personal Details</h3>
+            </div>
+            <div class="card-body">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                  <label class="form-label" style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Full Name</label>
+                  <div style="font-size: 1.05rem; font-weight: 600;" class="profile-name-val">Aarav Sharma</div>
+                </div>
+
+                <div>
+                  <label class="form-label" style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Student ID / Roll No</label>
+                  <div style="font-size: 1.05rem; font-weight: 600;" class="profile-id-val">2023CSB1042</div>
+                </div>
+
+                <div>
+                  <label class="form-label" style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Degree Program</label>
+                  <div style="font-size: 1.05rem; font-weight: 600;" id="profile-course-val">B.Tech Computer Science</div>
+                </div>
+
+                <div>
+                  <label class="form-label" style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Academic Year</label>
+                  <div style="font-size: 1.05rem; font-weight: 600;" id="profile-year-val">3rd Year (6th Sem)</div>
+                </div>
+
+                <div>
+                  <label class="form-label" style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">College Email</label>
+                  <div style="font-size: 1.05rem; font-weight: 600; color: var(--secondary);" id="profile-email-val">aarav.cs23@college.edu</div>
+                </div>
+
+                <div>
+                  <label class="form-label" style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">Phone Number</label>
+                  <div style="font-size: 1.05rem; font-weight: 600;" id="profile-phone-val">+91 98765 43210</div>
+                </div>
+              </div>
+
+              <div style="margin-top: 32px; padding: 18px; background: var(--bg-subtle); border-radius: var(--radius-md); border: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 700; font-size: 0.95rem;">Meal Plan Status: <span style="color: var(--primary-dark);">Active (Semester Plan)</span></div>
+                  <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">Smart RFID Card Linked • Valid till May 2027</div>
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="UI.toast('RFID card verified and active.', 'info')">
+                  Verify Card
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Edit Profile Modal -->
+  <div class="modal-backdrop" id="edit-profile-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Student Profile</h3>
+        <button class="modal-close-btn" onclick="UI.closeModal('edit-profile-modal')">×</button>
+      </div>
+      <form id="edit-profile-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="edit-student-name">Full Name</label>
+            <input type="text" class="form-input" id="edit-student-name" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="edit-student-id">Student ID</label>
+            <input type="text" class="form-input" id="edit-student-id" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="edit-course">Course / Branch</label>
+            <input type="text" class="form-input" id="edit-course" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="edit-year">Year / Semester</label>
+            <input type="text" class="form-input" id="edit-year" required />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label class="form-label" for="edit-hostel">Hostel</label>
+              <input type="text" class="form-input" id="edit-hostel" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-room">Room No</label>
+              <input type="text" class="form-input" id="edit-room" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="edit-email">Email</label>
+            <input type="email" class="form-input" id="edit-email" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="edit-phone">Phone</label>
+            <input type="text" class="form-input" id="edit-phone" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="edit-diet">Dietary Preference</label>
+            <select class="form-select" id="edit-diet">
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Non-Vegetarian">Non-Vegetarian</option>
+              <option value="Eggetarian">Eggetarian</option>
+              <option value="Vegan">Vegan</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="UI.closeModal('edit-profile-modal')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today's Menu - MessMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🍲</div>
+        <div class="logo-text">
+          <span class="logo-title">Mess<span>Mate</span></span>
+          <span class="logo-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        <a href="dashboard.html" class="nav-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="menu.html" class="nav-link active">
+          <span>🍛</span> Today's Menu
+        </a>
+        <a href="weekly-menu.html" class="nav-link">
+          <span>📅</span> Weekly Menu
+        </a>
+        <a href="ratings.html" class="nav-link">
+          <span>⭐</span> Meal Ratings
+        </a>
+        <a href="complaints.html" class="nav-link">
+          <span>📝</span> Complaints
+        </a>
+        <a href="announcements.html" class="nav-link">
+          <span>📢</span> Announcements
+        </a>
+        <a href="information.html" class="nav-link">
+          <span>ℹ️</span> Mess Information
+        </a>
+        <a href="profile.html" class="nav-link">
+          <span>👤</span> Profile
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar">AS</div>
+          <div class="user-details">
+            <div class="user-profile-name">Aarav Sharma</div>
+            <div class="user-profile-id">Aravali Hostel • B-304</div>
+          </div>
+          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
+          <div class="header-meta">
+            <div class="header-mess-name">
+              Today's Menu <span class="header-mess-badge">Daily Spread</span>
+            </div>
+            <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">👨‍🍳 Admin</a>
+          <a href="announcements.html" class="header-icon-btn" title="Notifications">🔔</a>
+          <a href="profile.html" class="header-icon-btn" title="My Profile">👤</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="page-header-block">
+          <div>
+            <h1 class="page-title" id="today-menu-day-name">Today's Detailed Dining Menu</h1>
+            <p class="page-subtitle">Nutritional breakdown, serving times and dietary indicators for all meal slots.</p>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <a href="weekly-menu.html" class="btn btn-outline btn-sm">📅 View Full Week</a>
+          </div>
+        </div>
+
+        <!-- Meal Details Feed -->
+        <div id="today-menu-cards">
+          <!-- Rendered by menu.js -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

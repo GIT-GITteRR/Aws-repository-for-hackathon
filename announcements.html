@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mess Announcements - MessMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🍲</div>
+        <div class="logo-text">
+          <span class="logo-title">Mess<span>Mate</span></span>
+          <span class="logo-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
+        <a href="menu.html" class="nav-link"><span>🍛</span> Today's Menu</a>
+        <a href="weekly-menu.html" class="nav-link"><span>📅</span> Weekly Menu</a>
+        <a href="ratings.html" class="nav-link"><span>⭐</span> Meal Ratings</a>
+        <a href="complaints.html" class="nav-link"><span>📝</span> Complaints</a>
+        <a href="announcements.html" class="nav-link active"><span>📢</span> Announcements</a>
+        <a href="information.html" class="nav-link"><span>ℹ️</span> Mess Information</a>
+        <a href="profile.html" class="nav-link"><span>👤</span> Profile</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar">AS</div>
+          <div class="user-details">
+            <div class="user-profile-name">Aarav Sharma</div>
+            <div class="user-profile-id">Aravali Hostel • B-304</div>
+          </div>
+          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
+          <div class="header-meta">
+            <div class="header-mess-name">
+              Announcements <span class="header-mess-badge">Official Noticeboard</span>
+            </div>
+            <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">👨‍🍳 Admin</a>
+          <a href="announcements.html" class="header-icon-btn" title="Notifications">🔔</a>
+          <a href="profile.html" class="header-icon-btn" title="My Profile">👤</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="page-header-block">
+          <div>
+            <h1 class="page-title">Mess Announcements & Circulars</h1>
+            <p class="page-subtitle">Stay informed about festival menus, special dinners, cleaning schedules, and committee meetings.</p>
+          </div>
+
+          <!-- Category Filters -->
+          <div class="filter-button-group">
+            <button class="filter-btn announcement-filter-btn active" data-filter="All">All</button>
+            <button class="filter-btn announcement-filter-btn" data-filter="Important">🔥 Important</button>
+            <button class="filter-btn announcement-filter-btn" data-filter="Events">🎉 Events</button>
+            <button class="filter-btn announcement-filter-btn" data-filter="Maintenance">🛠️ Maintenance</button>
+            <button class="filter-btn announcement-filter-btn" data-filter="General">📌 General</button>
+          </div>
+        </div>
+
+        <!-- Announcements Feed -->
+        <div class="announcements-feed" id="announcements-board">
+          <!-- Rendered by announcements.js -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/announcements.js"></script>
+</body>
+</html>

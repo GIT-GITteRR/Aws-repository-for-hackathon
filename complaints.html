@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaints & Issue Tracking - MessMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🍲</div>
+        <div class="logo-text">
+          <span class="logo-title">Mess<span>Mate</span></span>
+          <span class="logo-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
+        <a href="menu.html" class="nav-link"><span>🍛</span> Today's Menu</a>
+        <a href="weekly-menu.html" class="nav-link"><span>📅</span> Weekly Menu</a>
+        <a href="ratings.html" class="nav-link"><span>⭐</span> Meal Ratings</a>
+        <a href="complaints.html" class="nav-link active"><span>📝</span> Complaints</a>
+        <a href="announcements.html" class="nav-link"><span>📢</span> Announcements</a>
+        <a href="information.html" class="nav-link"><span>ℹ️</span> Mess Information</a>
+        <a href="profile.html" class="nav-link"><span>👤</span> Profile</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar">AS</div>
+          <div class="user-details">
+            <div class="user-profile-name">Aarav Sharma</div>
+            <div class="user-profile-id">Aravali Hostel • B-304</div>
+          </div>
+          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
+          <div class="header-meta">
+            <div class="header-mess-name">
+              Complaints Desk <span class="header-mess-badge">Escalation Portal</span>
+            </div>
+            <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">👨‍🍳 Admin</a>
+          <a href="announcements.html" class="header-icon-btn" title="Notifications">🔔</a>
+          <a href="profile.html" class="header-icon-btn" title="My Profile">👤</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="page-header-block">
+          <div>
+            <h1 class="page-title">Complaint Management</h1>
+            <p class="page-subtitle">Report mess issues directly to the mess committee and warden office with guaranteed response within 24 hours.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; align-items: flex-start;">
+          
+          <!-- Submit Complaint Form Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">✍️ Submit New Complaint</h3>
+            </div>
+            <div class="card-body">
+              <form id="submit-complaint-form">
+                <div class="form-group">
+                  <label class="form-label" for="complaint-category">Issue Category *</label>
+                  <select class="form-select" id="complaint-category" required>
+                    <option value="" disabled selected>Select category...</option>
+                    <option value="Food Quality">Food Quality & Taste</option>
+                    <option value="Hygiene">Hygiene & Cleanliness</option>
+                    <option value="Quantity">Quantity & Refills</option>
+                    <option value="Timing">Serving Timing & Delays</option>
+                    <option value="Staff">Staff Behavior & Courtesy</option>
+                    <option value="Other">Facility & Other Equipment</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="complaint-title">Complaint Title *</label>
+                  <input type="text" class="form-input" id="complaint-title" placeholder="Brief summary (e.g. Lukewarm food at dinner)" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="complaint-description">Detailed Description *</label>
+                  <textarea class="form-textarea" id="complaint-description" placeholder="Specify exact timing, counter number, or dish name to help us investigate..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="complaint-image-input">Optional Image Proof</label>
+                  <input type="file" id="complaint-image-input" accept="image/*" class="form-input" style="padding: 8px;" />
+                  <div id="complaint-image-preview"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  🚀 Submit Complaint
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- My Complaints History -->
+          <div>
+            <div class="page-header-block" style="margin-bottom: 16px;">
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 700;">📋 Previously Submitted Complaints</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">Real-time status updates from mess administration</p>
+              </div>
+            </div>
+
+            <div id="my-complaints-list">
+              <!-- Rendered by complaints.js -->
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Complaint Detail Modal -->
+  <div class="modal-backdrop" id="complaint-detail-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Complaint Timeline</h3>
+        <button class="modal-close-btn" onclick="UI.closeModal('complaint-detail-modal')">×</button>
+      </div>
+      <div class="modal-body" id="complaint-detail-modal-body">
+        <!-- Content filled dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="UI.closeModal('complaint-detail-modal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/complaints.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard - MessMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🍲</div>
+        <div class="logo-text">
+          <span class="logo-title">Mess<span>Mate</span></span>
+          <span class="logo-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        <a href="dashboard.html" class="nav-link active">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="menu.html" class="nav-link">
+          <span>🍛</span> Today's Menu
+        </a>
+        <a href="weekly-menu.html" class="nav-link">
+          <span>📅</span> Weekly Menu
+        </a>
+        <a href="ratings.html" class="nav-link">
+          <span>⭐</span> Meal Ratings
+        </a>
+        <a href="complaints.html" class="nav-link">
+          <span>📝</span> Complaints
+        </a>
+        <a href="announcements.html" class="nav-link">
+          <span>📢</span> Announcements
+        </a>
+        <a href="information.html" class="nav-link">
+          <span>ℹ️</span> Mess Information
+        </a>
+        <a href="profile.html" class="nav-link">
+          <span>👤</span> Profile
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar">AS</div>
+          <div class="user-details">
+            <div class="user-profile-name">Aarav Sharma</div>
+            <div class="user-profile-id">Aravali Hostel • B-304</div>
+          </div>
+          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
+          <div class="header-meta">
+            <div class="header-mess-name">
+              Central Dining Hall <span class="header-mess-badge">North Campus</span>
+            </div>
+            <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">
+            👨‍🍳 Switch to Admin
+          </a>
+          <a href="announcements.html" class="header-icon-btn" title="Notifications">
+            🔔
+            <span class="notification-badge-dot"></span>
+          </a>
+          <a href="profile.html" class="header-icon-btn" title="My Profile">
+            👤
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Body -->
+      <main class="content-body">
+        <!-- Welcome Hero Banner -->
+        <section class="welcome-hero">
+          <div class="welcome-content">
+            <h1><span id="dashboard-greeting-time">Good Evening</span>, <span class="user-profile-name">Student</span> 👋</h1>
+            <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 16px;">
+              Ready for dinner? Check today's serving items, rate past meals or submit suggestions.
+            </p>
+            <div class="welcome-subinfo">
+              <span class="welcome-chip">🏛️ North Campus Mess</span>
+              <span class="welcome-chip">🏢 <span class="user-profile-id">Aravali Hostel</span></span>
+              <span class="welcome-chip accent">🟢 Kitchen Operational</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Statistics -->
+        <section class="stats-grid">
+          <div class="card stat-card">
+            <div class="stat-icon green">🍽️</div>
+            <div class="stat-meta">
+              <div class="stat-label">Today's Menu</div>
+              <div class="stat-value" id="stat-today-meals-count">4 Meals</div>
+              <div class="stat-note">Breakfast, Lunch, Snacks, Dinner</div>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon amber">⭐</div>
+            <div class="stat-meta">
+              <div class="stat-label">Avg Mess Rating</div>
+              <div class="stat-value" id="stat-avg-rating">4.6 / 5</div>
+              <div class="stat-note">Based on 850+ ratings</div>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon purple">📬</div>
+            <div class="stat-meta">
+              <div class="stat-label">Open Complaints</div>
+              <div class="stat-value" id="stat-open-complaints">1</div>
+              <div class="stat-note" id="stat-open-complaints-sub">Under review</div>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon blue">⏰</div>
+            <div class="stat-meta">
+              <div class="stat-label">Upcoming Meal</div>
+              <div class="stat-value" id="stat-upcoming-meal">Dinner</div>
+              <div class="stat-note">Starts at 07:45 PM</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Actions Row -->
+        <section class="quick-actions-bar">
+          <a href="menu.html" class="btn-action-tile">
+            <div class="action-icon">📖</div>
+            <div>
+              <div>View Menu</div>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">Today's items</small>
+            </div>
+          </a>
+          <a href="ratings.html" class="btn-action-tile">
+            <div class="action-icon">🌟</div>
+            <div>
+              <div>Rate Meal</div>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">Provide feedback</small>
+            </div>
+          </a>
+          <a href="complaints.html" class="btn-action-tile">
+            <div class="action-icon">✍️</div>
+            <div>
+              <div>Submit Complaint</div>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">Report an issue</small>
+            </div>
+          </a>
+          <a href="weekly-menu.html" class="btn-action-tile">
+            <div class="action-icon">📆</div>
+            <div>
+              <div>Weekly Menu</div>
+              <small style="color: var(--text-muted); font-size: 0.75rem;">7-day schedule</small>
+            </div>
+          </a>
+        </section>
+
+        <!-- Today's Special Section -->
+        <section id="today-special-container"></section>
+
+        <!-- Today's Meals Cards -->
+        <section style="margin-bottom: 36px;">
+          <div class="page-header-block">
+            <div>
+              <h2 class="page-title" style="font-size: 1.4rem;">Today's Meals</h2>
+              <p class="page-subtitle">Live menu status and dining schedule</p>
+            </div>
+            <a href="menu.html" class="btn btn-outline btn-sm">Full Menu Breakdown →</a>
+          </div>
+
+          <div class="meal-cards-grid" id="today-meals-container">
+            <!-- Rendered by dashboard.js -->
+          </div>
+        </section>
+
+        <!-- Recent Announcements -->
+        <section>
+          <div class="page-header-block">
+            <div>
+              <h2 class="page-title" style="font-size: 1.4rem;">Recent Announcements</h2>
+              <p class="page-subtitle">Notice board & upcoming mess events</p>
+            </div>
+            <a href="announcements.html" class="btn btn-outline btn-sm">View All Announcements →</a>
+          </div>
+
+          <div class="announcements-feed" id="recent-announcements-container">
+            <!-- Rendered by dashboard.js -->
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

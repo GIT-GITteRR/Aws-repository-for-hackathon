@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MessMate - Modern College Mess Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .landing-hero-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .landing-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 40px;
+      border-radius: var(--radius-xl);
+      max-width: 600px;
+      width: 100%;
+      box-shadow: var(--shadow-xl);
+    }
+    .landing-roles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .role-btn-card {
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      cursor: pointer;
+      color: #fff;
+    }
+    .role-btn-card:hover {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+    .role-icon {
+      font-size: 2.2rem;
+    }
+    @media (max-width: 500px) {
+      .landing-roles { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="landing-hero-container">
+    <div class="landing-card">
+      <div style="display: inline-flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+        <div class="logo-badge" style="width: 50px; height: 50px; font-size: 24px;">🍲</div>
+        <div style="text-align: left;">
+          <h1 style="font-size: 1.8rem; font-weight: 800; line-height: 1;">Mess<span>Mate</span></h1>
+          <span style="font-size: 0.8rem; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase;">College Dining Portal</span>
+        </div>
+      </div>
+
+      <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 12px;">Smart Dining, Live Menus & Real-time Feedback</h2>
+      <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+        Welcome to the campus centralized mess management system. Choose your portal to proceed:
+      </p>
+
+      <div class="landing-roles">
+        <a href="dashboard.html" class="role-btn-card">
+          <span class="role-icon">🎓</span>
+          <div>
+            <div style="font-weight: 700; font-size: 1.1rem;">Student Portal</div>
+            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px;">Menus, Ratings, Complaints & Info</div>
+          </div>
+          <span class="btn btn-primary btn-sm" style="width: 100%; margin-top: 8px;">Enter as Student →</span>
+        </a>
+
+        <a href="admin/dashboard.html" class="role-btn-card">
+          <span class="role-icon">👨‍🍳</span>
+          <div>
+            <div style="font-weight: 700; font-size: 1.1rem;">Admin Portal</div>
+            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px;">Menu CRUD, Complaints & Analytics</div>
+          </div>
+          <span class="btn btn-outline btn-sm" style="width: 100%; margin-top: 8px; color: #fff; border-color: rgba(255,255,255,0.3);">Enter Admin Panel →</span>
+        </a>
+      </div>
+
+      <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.8rem; color: #64748b;">
+        IIT / College Campus Mess Administration • Powered by MessMate
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+</body>
+</html>

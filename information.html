@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mess Information & FAQ - MessMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🍲</div>
+        <div class="logo-text">
+          <span class="logo-title">Mess<span>Mate</span></span>
+          <span class="logo-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
+        <a href="menu.html" class="nav-link"><span>🍛</span> Today's Menu</a>
+        <a href="weekly-menu.html" class="nav-link"><span>📅</span> Weekly Menu</a>
+        <a href="ratings.html" class="nav-link"><span>⭐</span> Meal Ratings</a>
+        <a href="complaints.html" class="nav-link"><span>📝</span> Complaints</a>
+        <a href="announcements.html" class="nav-link"><span>📢</span> Announcements</a>
+        <a href="information.html" class="nav-link active"><span>ℹ️</span> Mess Information</a>
+        <a href="profile.html" class="nav-link"><span>👤</span> Profile</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar">AS</div>
+          <div class="user-details">
+            <div class="user-profile-name">Aarav Sharma</div>
+            <div class="user-profile-id">Aravali Hostel • B-304</div>
+          </div>
+          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
+          <div class="header-meta">
+            <div class="header-mess-name">
+              Mess Information <span class="header-mess-badge">Guidelines & Support</span>
+            </div>
+            <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">👨‍🍳 Admin</a>
+          <a href="announcements.html" class="header-icon-btn" title="Notifications">🔔</a>
+          <a href="profile.html" class="header-icon-btn" title="My Profile">👤</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="page-header-block">
+          <div>
+            <h1 class="page-title">Mess Information & Guidelines</h1>
+            <p class="page-subtitle">Official facility timings, supervisor contacts, dining etiquette, and student FAQs.</p>
+          </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-bottom: 32px;">
+          
+          <!-- Facility Details Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">🏢 Mess Facility & Location</h3>
+            </div>
+            <div class="card-body">
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Dining Hall Name</label>
+                <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);" id="info-mess-name">Central Dining Hall</div>
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Campus Location</label>
+                <div style="font-size: 0.95rem; color: var(--text-secondary);" id="info-mess-location">Opposite Aravali Hostel, North Campus</div>
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Chief Mess Supervisor</label>
+                <div style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600;" id="info-mess-manager">Mr. Rajendra Prasad</div>
+              </div>
+
+              <div>
+                <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Hostel Warden In-Charge</label>
+                <div style="font-size: 0.95rem; color: var(--text-secondary);" id="info-warden">Prof. S. K. Kulkarni</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Helpline Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📞 Contact & Emergency Helplines</h3>
+            </div>
+            <div class="card-body">
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Mess Desk Office</label>
+                <div style="font-size: 1rem; font-weight: 600; color: var(--text-primary);" id="info-phone">+91 11 2659 8877</div>
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Official Support Email</label>
+                <div style="font-size: 0.95rem; color: var(--primary-dark); font-weight: 600;" id="info-email">mess.north@college.edu</div>
+              </div>
+
+              <div style="background: #fee2e2; border: 1px solid #fecaca; border-radius: var(--radius-md); padding: 12px 16px;">
+                <label style="font-size: 0.75rem; text-transform: uppercase; color: #b91c1c; font-weight: 800;">🚨 24x7 Campus Emergency Contact</label>
+                <div style="font-size: 0.95rem; font-weight: 700; color: #991b1b; margin-top: 2px;" id="info-emergency">011-26591000 / Ext 100</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Serving Timings Table Card -->
+        <div class="card" style="margin-bottom: 32px;">
+          <div class="card-header">
+            <h3 class="card-title">⏰ Meal Serving Schedules</h3>
+          </div>
+          <div class="card-body" style="padding: 0;">
+            <div class="data-table-wrapper" style="border: none;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Meal Slot</th>
+                    <th>Weekday Timing (Mon - Fri)</th>
+                    <th>Weekend Timing (Sat - Sun)</th>
+                  </tr>
+                </thead>
+                <tbody id="info-timings-tbody">
+                  <!-- Rendered by information.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rules & Etiquette -->
+        <div class="card" style="margin-bottom: 32px;">
+          <div class="card-header">
+            <h3 class="card-title">📜 Mess Rules & Dining Etiquette</h3>
+          </div>
+          <div class="card-body">
+            <ul id="info-rules-list">
+              <!-- Rendered by information.js -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div style="margin-bottom: 36px;">
+          <div class="page-header-block" style="margin-bottom: 16px;">
+            <div>
+              <h2 class="page-title" style="font-size: 1.35rem;">Frequently Asked Questions (FAQ)</h2>
+              <p class="page-subtitle">Common queries from students regarding meals, guest tokens and complaints.</p>
+            </div>
+          </div>
+
+          <div id="info-faqs-container">
+            <!-- Rendered by information.js -->
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/information.js"></script>
+</body>
+</html>

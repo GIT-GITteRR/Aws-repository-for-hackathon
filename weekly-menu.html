@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Menu Planner - MessMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">🍲</div>
+        <div class="logo-text">
+          <span class="logo-title">Mess<span>Mate</span></span>
+          <span class="logo-subtitle">Student Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Main Menu</span>
+        <a href="dashboard.html" class="nav-link"><span>📊</span> Dashboard</a>
+        <a href="menu.html" class="nav-link"><span>🍛</span> Today's Menu</a>
+        <a href="weekly-menu.html" class="nav-link active"><span>📅</span> Weekly Menu</a>
+        <a href="ratings.html" class="nav-link"><span>⭐</span> Meal Ratings</a>
+        <a href="complaints.html" class="nav-link"><span>📝</span> Complaints</a>
+        <a href="announcements.html" class="nav-link"><span>📢</span> Announcements</a>
+        <a href="information.html" class="nav-link"><span>ℹ️</span> Mess Information</a>
+        <a href="profile.html" class="nav-link"><span>👤</span> Profile</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar">AS</div>
+          <div class="user-details">
+            <div class="user-profile-name">Aarav Sharma</div>
+            <div class="user-profile-id">Aravali Hostel • B-304</div>
+          </div>
+          <a href="index.html" class="btn-sidebar-logout" title="Logout">🚪</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="mobile-toggle-btn" id="mobile-menu-toggle">☰</button>
+          <div class="header-meta">
+            <div class="header-mess-name">
+              Weekly Planner <span class="header-mess-badge">7-Day Cycle</span>
+            </div>
+            <div class="header-date-text" id="current-date-badge">Sunday, Sep 20, 2026</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="admin/dashboard.html" class="header-btn-role-switch admin-tag">👨‍🍳 Admin</a>
+          <a href="announcements.html" class="header-icon-btn" title="Notifications">🔔</a>
+          <a href="profile.html" class="header-icon-btn" title="My Profile">👤</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="page-header-block">
+          <div>
+            <h1 class="page-title">Weekly Menu Planner</h1>
+            <p class="page-subtitle">Interactive 7-day calendar breakdown with dietary filters.</p>
+          </div>
+
+          <!-- Diet Filters -->
+          <div class="filter-button-group">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="veg">🌱 Pure Veg</button>
+            <button class="filter-btn" data-filter="non-veg">🍗 Non-Veg Included</button>
+          </div>
+        </div>
+
+        <!-- 7 Days Tabs -->
+        <div class="day-selector-tabs" id="weekly-day-tabs">
+          <!-- Rendered by weekly-menu.js -->
+        </div>
+
+        <!-- Selected Day Schedule Container -->
+        <div style="margin-top: 16px;">
+          <h2 id="selected-day-display-title" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px;">
+            Dining Schedule
+          </h2>
+          <div id="weekly-meals-schedule">
+            <!-- Rendered by weekly-menu.js -->
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/weekly-menu.js"></script>
+</body>
+</html>
