@@ -1,0 +1,99 @@
+/* ==========================================================================
+   MessMate Admin Dashboard Stylesheet
+   ========================================================================== */
+
+.admin-sidebar {
+  background-color: #0b132b;
+}
+
+.admin-badge-indicator {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+}
+
+/* Admin Data Tables */
+.data-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.data-table th {
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Admin Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.chart-card {
+  padding: 22px;
+  min-height: 320px;
+}
+
+.chart-container {
+  position: relative;
+  height: 240px;
+  width: 100%;
+}
+
+/* Quick Form in Admin Modals */
+.admin-badge-pill {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.admin-badge-pill.pending { background: #fef3c7; color: #b45309; }
+.admin-badge-pill.under-review { background: #dbeafe; color: #1e40af; }
+.admin-badge-pill.resolved { background: #d1fae5; color: #047857; }
+
+/* Status dropdown selector */
+.status-select-sm {
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
